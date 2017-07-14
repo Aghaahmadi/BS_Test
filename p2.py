@@ -15,5 +15,7 @@ soup = bs.BeautifulSoup(sauce,'lxml')
 # for paragraph in body.find_all('p'):
 # 	print(paragraph.text)
 
-for h in soup.find_all('h4', class_='blue'):
-	print(h.text)
+# for h in soup.find_all('h4', class_='blue'):
+# 	print(h.text)
+
+print(soup.find_all('a', class_='cms-amount cursor-default'))
