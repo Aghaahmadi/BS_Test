@@ -7,10 +7,12 @@ import urllib.request
 sauce = urllib.request.urlopen('https://play.google.com/store/apps/details?id=com.anydo&hl=en').read()
 soup = bs.BeautifulSoup(sauce,'lxml')
 
-# print(soup.title.string)
+# print(soup.get_text())
+# for paragraph in soup.find_all('div'):
+# 	s = paragraph.text
+# 	if s == None:
+# 		continue
+# 	print(s)
 
-for paragraph in soup.find_all('itemprop'):
-	s = paragraph.string
-	if s == None:
-		continue
-	print(paragraph.string)
+for url in soup.find_all('a'):
+	print(url.get('href'))
